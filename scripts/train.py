@@ -18,6 +18,9 @@ from lib.queue_manager import queue_manager
 from lib.utils import (get_folder, get_image_paths, set_system_verbosity)
 from plugins.plugin_loader import PluginLoader
 
+
+from IPython.display import Image, display
+
 logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 
@@ -321,6 +324,7 @@ class Train():
                 img = "training_preview.jpg"
                 imgfile = os.path.join(scriptpath, img)
                 cv2.imwrite(imgfile, image)  # pylint: disable=no-member
+                display(Image(imgfile)
                 logger.trace("Saved preview to: '%s'", img)
             if self.args.redirect_gui:
                 logger.trace("Generating preview for GUI")
