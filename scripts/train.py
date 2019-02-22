@@ -331,7 +331,7 @@ class Train():
                 img = ".gui_training_preview.jpg"
                 imgfile = os.path.join(scriptpath, "lib", "gui",
                                        ".cache", "preview", img)
-                cv2.imwrite(imgfile, image)  # pylint: disable=no-member
+                display(Image(imgfile)
                 logger.trace("Generated preview for GUI: '%s'", img)
             if self.args.preview:
                 logger.trace("Generating preview for display: '%s'", name)
